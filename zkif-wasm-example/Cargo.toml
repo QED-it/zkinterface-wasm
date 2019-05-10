@@ -1,0 +1,29 @@
+[package]
+name = "zkif-wasm-example"
+version = "0.1.0"
+description = "Example zkInterface circuit in WebAssembly"
+repository = "https://github.com/QED-it/zkinterface-wasm"
+homepage = "https://github.com/QED-it/zkinterface"
+license = "MIT"
+authors = ["Aurélien Nicolas <aurel@qed-it.com>"]
+edition = "2018"
+
+[features]
+default = ["console_error_panic_hook"]
+
+[dependencies]
+wasm-bindgen = {version="0.2", features = ["serde-serialize"]}
+wee_alloc = { version = "0.4.2", optional = true }
+console_error_panic_hook = { version = "0.1.1", optional = true }
+
+zkinterface = "1.0.2"
+
+[dev-dependencies]
+wasm-bindgen-test = "0.2"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"
