@@ -15,7 +15,7 @@ pub fn prove(circuit: &[u8], witness: &[u8]) -> Vec<u8> {
 
     let proof = zkinterface_backend::prove(&messages).unwrap();
 
-    serde_cbor::to_vec(&proof).unwrap()
+    bincode::serialize(&proof).unwrap()
 }
 
 
@@ -25,7 +25,7 @@ pub fn verify(circuit: &[u8], proof_ser: &[u8]) -> bool {
     let messages = &mut Messages::new(1);
     messages.push_message(Vec::from(circuit)).unwrap();
 
-    let proof: R1CSProof = serde_cbor::from_slice(&proof_ser).unwrap();
+    let proof: R1CSProof = bincode::deserialize(proof_ser).unwrap();
 
     zkinterface_backend::verify(&messages, &proof).is_ok()
 }
