@@ -1,7 +1,7 @@
 [package]
-name = "zkif-wasm-bulletproofs"
+name = "zkif-wasm-zokrates"
 version = "0.1.0"
-description = "Bulletproofs backend for zkInterface in WebAssembly"
+description = "ZoKrates frontend through zkInterface and WebAssembly"
 repository = "https://github.com/QED-it/zkinterface-wasm"
 homepage = "https://github.com/QED-it/zkinterface"
 license = "MIT"
@@ -14,16 +14,14 @@ default = ["wee_alloc"]
 
 [dependencies]
 wasm-bindgen = {version="0.2", features = ["serde-serialize"]}
+serde = "^1.0.92"
+serde_derive = "^1.0.92"
 wee_alloc = { version = "0.4.2", optional = true }
 console_error_panic_hook = { version = "0.1.1", optional = true }
 
 zkinterface = "1.0.3"
-bulletproofs = { git = "https://github.com/QED-it/bulletproofs", branch = "zkinterface", features = ["yoloproofs"] }
-bincode = "1"
-
-# Fix bulletproofs dependencies to compile for wasm.
-clear_on_drop = { version = "0.2", features = ["no_cc"] }
-rand = { version = "0.6", features = ["wasm-bindgen"] }
+zokrates_core = { path = "../../ZoKrates/zokrates_core" }
+zokrates_field = { path = "../../ZoKrates/zokrates_field" }
 
 [dev-dependencies]
 wasm-bindgen-test = "0.2"

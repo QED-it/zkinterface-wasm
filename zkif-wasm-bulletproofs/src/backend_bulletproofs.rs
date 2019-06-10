@@ -21,9 +21,10 @@ pub fn prove(circuit: &[u8], witness: &[u8]) -> Vec<u8> {
 
 /// Verify using the circuit and the proof.
 #[wasm_bindgen]
-pub fn verify(circuit: &[u8], proof_ser: &[u8]) -> bool {
+pub fn verify(circuit: &[u8], inputs: &[u8], proof_ser: &[u8]) -> bool {
     let messages = &mut Messages::new(1);
     messages.push_message(Vec::from(circuit)).unwrap();
+    messages.push_message(Vec::from(inputs)).unwrap();
 
     let proof: R1CSProof = bincode::deserialize(proof_ser).unwrap();
 
