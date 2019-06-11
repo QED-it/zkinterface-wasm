@@ -12,30 +12,32 @@ def main(field x, private field y) -> (field):
 `;
 document.getElementById("program").innerText = code.trim();
 
+// Compile the code to ZkInterface constraints with the ZoKrates module.
 let constraints = zkif_zokrates.make_constraint_system(code);
-document.getElementById("cs").innerText = zkif_zokrates.pretty(constraints);
+document.getElementById("cs").innerText = zkif_zokrates.pretty(constraints).trim();
 
-// Prove.
+// Prover's View.
+
+// Compute the ZkInterface witness with the ZoKrates module.
 let x = 3, y = 4;
 let {prover_msg, verifier_msg} = zkif_zokrates.make_witness(code, x, y);
 
+// Generate a proof with the Bulletproofs module.
 let proof = zkif_bulletproofs.prove(constraints, prover_msg);
 
+// Display.
 document.getElementById("prover").innerText = `
-x = ${x}
-y = ${y}
-
+x = ${x}, y = ${y}
 ${zkif_zokrates.pretty(prover_msg)}
 `.trim();
 
+// Prover sends verifier_msg and proof to the verifier.
 document.getElementById("verifier").innerText = `
 ${zkif_zokrates.pretty(verifier_msg)}
-Bulletproof: ${proof.length} bytes
+Verifying proof (${proof.length} bytes)
 `.trim();
 
-// …Prover sends verifier_msg and proof to the verifier…
-
-// Verify.
+// Verify the proof using the Bulletproofs module and the messages.
 let verif = zkif_bulletproofs.verify(constraints, verifier_msg, proof);
 
 // Display what we verified.
