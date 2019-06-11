@@ -5,6 +5,46 @@
   border-radius: 1em 1em 0 0;
 }
 
+.arrow-up {
+  flex: none !important;
+  width: 0;
+  height: 0;
+  border-left: 2em solid transparent !important;
+  border-right: 2em solid transparent !important;
+  border-bottom-width: 2em;
+  border-bottom-style: solid;
+}
+
+.arrow-down {
+  flex: none !important;
+  width: 0;
+  height: 0;
+  border-left: 2em solid transparent !important;
+  border-right: 2em solid transparent !important;
+  border-top-width: 2em;
+  border-top-style: solid;
+}
+
+.arrow-right {
+  flex: none !important;
+  width: 0;
+  height: 0;
+  border-top: 2em solid transparent !important;
+  border-bottom: 2em solid transparent !important;
+  border-left-width: 2em;
+  border-left-style: solid;
+}
+
+.arrow-left {
+  flex: none !important;
+  width: 0;
+  height: 0;
+  border-top: 2em solid transparent !important;
+  border-bottom: 2em solid transparent !important;
+  border-right-width: 2em;
+  border-right-style: solid;
+}
+
 
 .container {
   max-width: 960px;
