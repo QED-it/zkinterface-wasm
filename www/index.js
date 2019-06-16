@@ -7,7 +7,7 @@ let code = `
 def main(field x, private field y) -> (field):
     field xx = x * x
     field yy = y * y
-    return xx + yy
+    return xx + yy - 1
 
 `;
 document.getElementById("program").innerText = code.trim();
