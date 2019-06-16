@@ -17,7 +17,7 @@ wasm-bindgen = {version="0.2", features = ["serde-serialize"]}
 wee_alloc = { version = "0.4.2", optional = true }
 console_error_panic_hook = { version = "0.1.1", optional = true }
 
-zkinterface = "1.0.3"
+zkinterface = "1.0.5"
 bulletproofs = { git = "https://github.com/QED-it/bulletproofs", branch = "zkinterface", features = ["yoloproofs"] }
 bincode = "1"
 

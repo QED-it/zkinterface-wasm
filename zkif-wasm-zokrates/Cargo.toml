@@ -19,7 +19,7 @@ serde_derive = "^1.0.92"
 wee_alloc = { version = "0.4.2", optional = true }
 console_error_panic_hook = { version = "0.1.1", optional = true }
 
-zkinterface = "1.0.4"
+zkinterface = "1.0.6"
 zokrates_core = { git = "https://github.com/QED-it/ZoKrates", branch = "zkinterface" }
 zokrates_field = { git = "https://github.com/QED-it/ZoKrates", branch = "zkinterface" }
 
@@ -34,5 +34,9 @@ crate-type = ["cdylib", "rlib"]
 opt-level = "z"
 lto = true
 
-#[patch.crates-io]
+[patch.crates-io]
 #zkinterface = { path = "../../zkinterface/rust" }
+
+[patch."https://github.com/QED-it/ZoKrates"]
+#zokrates_core = { path = "../../ZoKrates/zokrates_core" }
+#zokrates_field = { path = "../../ZoKrates/zokrates_field", features = ["curve25519"] }
