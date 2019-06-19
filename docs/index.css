@@ -120,3 +120,21 @@
 }
 
 .overflow-hidden { overflow: hidden; }
+pre::-webkit-scrollbar { width: 0 !important }
+pre { overflow: -moz-scrollbars-none; }
+pre { -ms-overflow-style: none; }
+
+.bg-dark-q {
+  background-color: #1E2429!important;
+}
+.border-dark-q {
+  border-color: #1E2429;
+}
+
+.bg-light-q {
+  background-color: #FFFFFF!important;
+  border: solid #1E2429 1px;
+}
+.border-light-q {
+  border-color: #FFFFFF;
+}

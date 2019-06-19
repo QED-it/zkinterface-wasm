@@ -7,7 +7,6 @@
     <title>ZkInterface - Bulletproofs - ZoKrates in-browser integration</title>
 
     <!-- Bootstrap core CSS -->
-<!-- <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 <link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
@@ -32,49 +31,59 @@
   <body>
 
 <script src="start.js"></script>
-<a href="https://github.com/QED-it/zkinterface-wasm" class="github-corner" aria-label="View source on GitHub" style="z-index: 1;"><svg viewBox="0 0 250 250" style="fill:#212529; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);z-index: 1;" aria-hidden="true" width="150" height="150"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+
+<a href="https://github.com/QED-it/zkinterface-wasm" class="github-corner" aria-label="View source on GitHub" style="z-index: 1;"><svg viewBox="0 0 250 250" style="fill:#1E2429; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);z-index: 1;" aria-hidden="true" width="150" height="150"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 bg-light">
   <div class="col-md-5 p-lg-5 mx-auto">
-    <h1 class="display-4 font-weight-normal">ZkInterface - ZoKrates - Bulletproof</h1>
-    <p class="lead font-weight-normal">A demonstration of a modular zero-knowledge application.</p>
-    <a class="btn btn-outline-secondary m-2" target="_blank" href="https://github.com/QED-it/zkinterface-wasm">
-      Code of this demo
-    </a>
-    <br/>
-    <a class="btn btn-outline-secondary m-2" target="_blank" href="https://github.com/QED-it/zkinterface">
-      ZkInterface
-    </a>
-    <a class="btn btn-outline-secondary m-2" target="_blank" href="https://zokrates.github.io/">
-      ZoKrates
-    </a>
-    <a class="btn btn-outline-secondary m-2" target="_blank" href="https://github.com/dalek-cryptography/bulletproofs">
-      Dalek Bulletproofs
-    </a>
+    <h1 class="display-4 font-weight-normal pb-5">ZkInterface:<br/>ZoKrates ➞ Bulletproofs</h1>
+    <p class="lead">
+      <a target="_blank" href="https://github.com/QED-it/zkinterface">ZkInterface</a>
+      is a standard for interoperability of zero-knowledge frameworks.
+    </p>
+    <p class="lead">
+      In this demonstration, we connect the
+      <a target="_blank" href="https://zokrates.github.io/">ZoKrates</a>
+      compiler to the
+      <a target="_blank" href="https://github.com/dalek-cryptography/bulletproofs">Dalek&nbsp;Bulletproofs</a>
+      proving system.
+    </p>
+    <p class="lead">
+      All tools run on this page as WebAssembly modules, and communicate through ZkInterface.
+      Check out the
+      <a target="_blank" href="https://github.com/QED-it/zkinterface-wasm">code of this demo</a>
+      to get started with your own zero-knowledge application.
+    </p>
+    <p class="lead">
+      This effort is presented by the
+      <a target="_blank" href="https://qed-it.com/">QEDIT</a> team.
+    </p>
   </div>
-  <div class="product-device shadow-sm d-none d-md-block"></div>
-  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+
+  <!-- <div class="product-device shadow-sm d-none d-md-block"></div> -->
+  <!--   <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div> -->
 </div>
 
 <div class="d-md-flex flex-md-equal w-100 pl-md-3">
-  <div class="bg-dark p-3 p-md-5 overflow-hidden">
+  <div class="bg-dark-q p-3 p-md-5 overflow-hidden">
     <div class="text-center text-white mb-3 pb-3">
       <h2 class="display-5">Zero-knowledge Program</h2>
       <p class="lead">A computation in the ZoKrates language.</p>
     </div>
-    <pre class="code-block bg-light shadow-sm mx-auto"><code
+    <pre class="code-block bg-light-q shadow-sm mx-auto"><code
       id="program">
       _
     </code></pre>
   </div>
 
-  <div class="border-dark arrow-right my-auto"></div>
+  <div class="border-dark-q arrow-right my-auto"></div>
 
-  <div class="bg-light mr-md-3 p-3 p-md-5 overflow-hidden">
+  <div class="bg-light-q mr-md-3 p-3 p-md-5 overflow-hidden">
     <div class="text-center mb-3 pb-3">
       <h2 class="display-5">Prover's View</h2>
       <p class="lead">A private witness is used to generate a proof.</p>
     </div>
-    <pre class="code-block bg-dark text-white shadow-sm mx-auto"><code
+    <pre class="code-block bg-dark-q text-white shadow-sm mx-auto"><code
       id="prover">
       _
     </code></pre>
@@ -84,36 +93,36 @@
 
 <div class="d-md-flex flex-md-equal w-100 pl-md-3">
   <div class="overflow-hidden">
-    <div class="border-dark arrow-down mx-auto"></div>
+    <div class="border-dark-q arrow-down mx-auto"></div>
   </div>
   <div class="overflow-hidden">
-    <div class="border-dark arrow-down mx-auto"></div>
+    <div class="border-dark-q arrow-down mx-auto"></div>
   </div>
 </div>
 
 <div class="d-md-flex flex-md-equal w-100 mb-md-3 pl-md-3">
 
-  <div class="bg-light p-3 p-md-5 overflow-hidden">
+  <div class="bg-light-q p-3 p-md-5 overflow-hidden">
     <div class="text-center mb-3 pb-3">
       <h2 class="display-5">Constraint System</h2>
       <p class="lead">
         The program is compiled into a common R1CS form.
       </p>
     </div>
-    <pre class="code-block bg-dark text-white shadow-sm mx-auto"><code
+    <pre class="code-block bg-dark-q text-white shadow-sm mx-auto"><code
       id="cs">
       _
     </code></pre>
   </div>
 
-  <div class="border-dark arrow-right my-auto"></div>
+  <div class="border-dark-q arrow-right my-auto"></div>
 
-  <div class="bg-dark mr-md-3 p-3 p-md-5 overflow-hidden">
+  <div class="bg-dark-q mr-md-3 p-3 p-md-5 overflow-hidden">
     <div class="text-center text-white mb-3 pb-3">
       <h2 class="display-5">Verifier's View</h2>
       <p class="lead">The proof is checked based on public inputs.</p>
     </div>
-    <pre class="code-block bg-light shadow-sm mx-auto"><code
+    <pre class="code-block bg-light-q shadow-sm mx-auto"><code
       id="verifier">
       _
       </code>
@@ -121,6 +130,8 @@
 <span id="status"></span></pre>
   </div>
 </div>
+
+<div class="position-relative overflow-hidden mx-md-3 mt-5 text-center bg-light"></div>
 
 <div class="position-relative overflow-hidden mx-md-3 mt-5 text-center bg-light">
   <div class="col-md-5 p-lg-4 mx-auto">
@@ -133,31 +144,32 @@
 </div>
 
 <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-  <div class="bg-dark p-3 p-md-5 overflow-hidden">
+  <div class="bg-dark-q p-3 p-md-5 overflow-hidden">
     <div class="text-center text-white mb-3 pb-3">
       <h2>ZoKrates.wasm</h2>
       <p class="lead">
-        The frontend module generates constraints, prover's witnesses, and verifier's inputs
-        into ZkInterface messages.
+        The frontend module generates the constraints, prover's witnesses, and verifier's inputs,
+        and store them in ZkInterface messages.
       </p>
     </div>
-    <pre class="code-block bg-light shadow-sm mx-auto"><code>
+    <pre class="code-block bg-light-q shadow-sm mx-auto"><code>
 let constraints = zkif_zokrates.make_constraint_system(code);
 
 let {prover_msg, verifier_msg} = zkif_zokrates.make_witness(code, x, y);
     </code></pre>
   </div>
 
-  <div class="border-dark arrow-right my-auto"></div>
+  <div class="border-dark-q arrow-right my-auto"></div>
 
-  <div class="bg-light mr-md-3 p-3 p-md-5 overflow-hidden">
+  <div class="bg-light-q mr-md-3 p-3 p-md-5 overflow-hidden">
     <div class="text-center mb-3 pb-3">
       <h2>Bulletproofs.wasm</h2>
       <p class="lead">
         The proving system reads the ZkInterface messages to generate proofs.
+        <br/>&nbsp;
       </p>
     </div>
-    <pre class="code-block bg-dark text-white shadow-sm mx-auto"><code>
+    <pre class="code-block bg-dark-q text-white shadow-sm mx-auto"><code>
 let proof = zkif_bulletproofs.prove(constraints, prover_msg);
 
 let valid = zkif_bulletproofs.verify(constraints, verifier_msg, proof);

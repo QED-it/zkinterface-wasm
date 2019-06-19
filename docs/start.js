@@ -195,7 +195,7 @@
 /******/ 				promises.push(installedWasmModuleData);
 /******/ 			else {
 /******/ 				var importObject = wasmImportObjects[wasmModuleId]();
-/******/ 				var req = fetch(__webpack_require__.p + "" + {"./pkg/zkif-wasm-bulletproofs/zkif_wasm_bulletproofs_bg.wasm":"05200e87b33524750bb1","./pkg/zkif-wasm-zokrates/zkif_wasm_zokrates_bg.wasm":"ae71c86edece1d8f6e50"}[wasmModuleId] + ".module.wasm");
+/******/ 				var req = fetch(__webpack_require__.p + "" + {"./pkg/zkif-wasm-bulletproofs/zkif_wasm_bulletproofs_bg.wasm":"153beceed3508df17050","./pkg/zkif-wasm-zokrates/zkif_wasm_zokrates_bg.wasm":"bdd9ac18e6b6ee266105"}[wasmModuleId] + ".module.wasm");
 /******/ 				var promise;
 /******/ 				if(importObject instanceof Promise && typeof WebAssembly.compileStreaming === 'function') {
 /******/ 					promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {
