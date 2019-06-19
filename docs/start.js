@@ -284,19 +284,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./start.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./scripts/start.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./start.js":
-/*!******************!*\
-  !*** ./start.js ***!
-  \******************/
+/***/ "./scripts/start.js":
+/*!**************************!*\
+  !*** ./scripts/start.js ***!
+  \**************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// A dependency graph that contains any wasm must all be imported\n// asynchronously. This `bootstrap.js` file does the single async import, so\n// that no one else needs to worry about it again.\n__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./index.js */ \"./index.js\"))\n  .catch(e => console.error(\"Error importing `index.js`:\", e));\n\n\n//# sourceURL=webpack:///./start.js?");
+eval("// A dependency graph that contains any wasm must all be imported\n// asynchronously. This `bootstrap.js` file does the single async import, so\n// that no one else needs to worry about it again.\n__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./index.js */ \"./scripts/index.js\"))\n  .catch(e => console.error(\"Error importing `index.js`:\", e));\n\n\n//# sourceURL=webpack:///./scripts/start.js?");
 
 /***/ })
 

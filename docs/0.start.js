@@ -1,17 +1,5 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[0],{
 
-/***/ "./index.js":
-/*!******************!*\
-  !*** ./index.js ***!
-  \******************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pkg_zkif_wasm_zokrates__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pkg/zkif-wasm-zokrates */ \"./pkg/zkif-wasm-zokrates/zkif_wasm_zokrates.js\");\n/* harmony import */ var _pkg_zkif_wasm_bulletproofs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pkg/zkif-wasm-bulletproofs */ \"./pkg/zkif-wasm-bulletproofs/zkif_wasm_bulletproofs.js\");\n\n\n\n// Common program.\nlet code = `\n\ndef main(field x, private field y) -> (field):\n    field xx = x * x\n    field yy = y * y\n    return xx + yy - 1\n\n`;\ndocument.getElementById(\"program\").innerText = code.trim();\n\n// Compile the code to ZkInterface constraints with the ZoKrates module.\nlet constraints = _pkg_zkif_wasm_zokrates__WEBPACK_IMPORTED_MODULE_0__[\"make_constraint_system\"](code);\ndocument.getElementById(\"cs\").innerText = _pkg_zkif_wasm_zokrates__WEBPACK_IMPORTED_MODULE_0__[\"pretty\"](constraints).trim();\n\n// Prover's View.\n\n// Compute the ZkInterface witness with the ZoKrates module.\nlet x = 3, y = 4;\nlet {prover_msg, verifier_msg} = _pkg_zkif_wasm_zokrates__WEBPACK_IMPORTED_MODULE_0__[\"make_witness\"](code, x, y);\n\n// Generate a proof with the Bulletproofs module.\nlet proof = _pkg_zkif_wasm_bulletproofs__WEBPACK_IMPORTED_MODULE_1__[\"prove\"](constraints, prover_msg);\n\n// Display.\ndocument.getElementById(\"prover\").innerText = `\nx = ${x}, y = ${y}\n${_pkg_zkif_wasm_zokrates__WEBPACK_IMPORTED_MODULE_0__[\"pretty\"](prover_msg)}\n`.trim();\n\n// Prover sends verifier_msg and proof to the verifier.\ndocument.getElementById(\"verifier\").innerText = `\n${_pkg_zkif_wasm_zokrates__WEBPACK_IMPORTED_MODULE_0__[\"pretty\"](verifier_msg)}\nVerifying proof (${proof.length} bytes)\n`.trim();\n\n// Verify the proof using the Bulletproofs module and the messages.\nlet verif = _pkg_zkif_wasm_bulletproofs__WEBPACK_IMPORTED_MODULE_1__[\"verify\"](constraints, verifier_msg, proof);\n\n// Display what we verified.\nfunction statement(msg) {\n    let public_inputs = _pkg_zkif_wasm_zokrates__WEBPACK_IMPORTED_MODULE_0__[\"parse_verifier_msg\"](msg);\n    let x = public_inputs[1][0];\n    let zz = public_inputs[2][0];\n    return `${x}^2 + y^2 = ${zz}`\n}\n\nlet status = `The statement is ${verif && \"proven\" || \"NOT proven\"}:  ${statement(verifier_msg)}`;\ndocument.getElementById(\"status\").innerText = status;\n\n\n//# sourceURL=webpack:///./index.js?");
-
-/***/ }),
-
 /***/ "./pkg/zkif-wasm-bulletproofs sync recursive":
 /*!*****************************************!*\
   !*** ./pkg/zkif-wasm-bulletproofs sync ***!
@@ -66,6 +54,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, exports, __webpack_require__) {
 
 eval("\"use strict\";\n// Instantiate WebAssembly module\nvar wasmExports = __webpack_require__.w[module.i];\n__webpack_require__.r(exports);\n// export exports from WebAssembly module\nfor(var name in wasmExports) if(name != \"__webpack_init__\") exports[name] = wasmExports[name];\n// exec imports from WebAssembly module (for esm order)\n/* harmony import */ var m0 = __webpack_require__(/*! ./zkif_wasm_zokrates */ \"./pkg/zkif-wasm-zokrates/zkif_wasm_zokrates.js\");\n\n\n// exec wasm module\nwasmExports[\"__webpack_init__\"]()\n\n//# sourceURL=webpack:///./pkg/zkif-wasm-zokrates/zkif_wasm_zokrates_bg.wasm?");
+
+/***/ }),
+
+/***/ "./scripts/index.js":
+/*!**************************!*\
+  !*** ./scripts/index.js ***!
+  \**************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pkg_zkif_wasm_zokrates__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pkg/zkif-wasm-zokrates */ \"./pkg/zkif-wasm-zokrates/zkif_wasm_zokrates.js\");\n/* harmony import */ var _pkg_zkif_wasm_bulletproofs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pkg/zkif-wasm-bulletproofs */ \"./pkg/zkif-wasm-bulletproofs/zkif_wasm_bulletproofs.js\");\n\n\n\n// Common program.\nlet code = `\n\ndef main(field x, private field y) -> (field):\n    field xx = x * x\n    field yy = y * y\n    return xx + yy - 1\n\n`;\ndocument.getElementById(\"program\").innerText = code.trim();\n\n// Compile the code to ZkInterface constraints with the ZoKrates module.\nlet constraints = _pkg_zkif_wasm_zokrates__WEBPACK_IMPORTED_MODULE_0__[\"make_constraint_system\"](code);\ndocument.getElementById(\"cs\").innerText = _pkg_zkif_wasm_zokrates__WEBPACK_IMPORTED_MODULE_0__[\"pretty\"](constraints).trim();\n\n// Prover's View.\n\n// Compute the ZkInterface witness with the ZoKrates module.\nlet x = 3, y = 4;\nlet {prover_msg, verifier_msg} = _pkg_zkif_wasm_zokrates__WEBPACK_IMPORTED_MODULE_0__[\"make_witness\"](code, x, y);\n\n// Generate a proof with the Bulletproofs module.\nlet proof = _pkg_zkif_wasm_bulletproofs__WEBPACK_IMPORTED_MODULE_1__[\"prove\"](constraints, prover_msg);\n\n// Display.\ndocument.getElementById(\"prover\").innerText = `\nx = ${x}, y = ${y}\n${_pkg_zkif_wasm_zokrates__WEBPACK_IMPORTED_MODULE_0__[\"pretty\"](prover_msg)}\n`.trim();\n\n// Prover sends verifier_msg and proof to the verifier.\ndocument.getElementById(\"verifier\").innerText = `\n${_pkg_zkif_wasm_zokrates__WEBPACK_IMPORTED_MODULE_0__[\"pretty\"](verifier_msg)}\nVerifying proof (${proof.length} bytes)\n`.trim();\n\n// Verify the proof using the Bulletproofs module and the messages.\nlet verif = _pkg_zkif_wasm_bulletproofs__WEBPACK_IMPORTED_MODULE_1__[\"verify\"](constraints, verifier_msg, proof);\n\n// Display what we verified.\nfunction statement(msg) {\n    let public_inputs = _pkg_zkif_wasm_zokrates__WEBPACK_IMPORTED_MODULE_0__[\"parse_verifier_msg\"](msg);\n    let x = public_inputs[1][0];\n    let zz = public_inputs[2][0];\n    return `${x}^2 + y^2 = ${zz}`\n}\n\nlet status = `The statement is ${verif && \"proven\" || \"NOT proven\"}:  ${statement(verifier_msg)}`;\ndocument.getElementById(\"status\").innerText = status;\n\n\n//# sourceURL=webpack:///./scripts/index.js?");
 
 /***/ })
 

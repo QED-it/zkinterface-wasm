@@ -1,5 +1,5 @@
-import * as zkif_zokrates from "./pkg/zkif-wasm-zokrates";
-import * as zkif_bulletproofs from "./pkg/zkif-wasm-bulletproofs";
+import * as zkif_zokrates from "../pkg/zkif-wasm-zokrates";
+import * as zkif_bulletproofs from "../pkg/zkif-wasm-bulletproofs";
 
 // Common program.
 let code = `
