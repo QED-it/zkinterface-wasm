@@ -6,8 +6,8 @@ rust:
   - nightly
 
 install:
-- rustup component add rustfmt --toolchain stable
-- rustup component add clippy --toolchain stable
+- rustup component add rustfmt #--toolchain stable
+- rustup component add clippy #--toolchain stable
 - cargo install -f wasm-pack  
 
 before_script:
