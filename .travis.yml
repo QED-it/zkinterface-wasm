@@ -2,13 +2,16 @@ language: rust
 cache: cargo
 
 rust:
-- stable
+# - stable
+  - nightly
 
 install:
-- rustup component add rustfmt --toolchain stable
-- rustup component add clippy --toolchain stable
-- curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
+- rustup component add rustfmt #--toolchain stable
+- rustup component add clippy #--toolchain stable
+- cargo install -f wasm-pack  
 
+before_script:
+   - chmod +x ./ci/cargo_check.sh
 script:
  - ./ci/cargo_check.sh 
  - make

@@ -1,7 +1,7 @@
 use std::collections::HashMap;
-use wasm_bindgen::prelude::{JsValue, wasm_bindgen};
+use wasm_bindgen::prelude::{wasm_bindgen, JsValue};
 use zkinterface::{
-    reading::{Messages, split_messages},
+    reading::{split_messages, Messages},
     zkinterface_generated::zkinterface::get_size_prefixed_root_as_root,
 };
 use zokrates_core::{
@@ -11,10 +11,8 @@ use zokrates_core::{
 };
 use zokrates_field::field::FieldPrime;
 
-
 fn compile_prog(code: &str) -> Prog<FieldPrime> {
-    compile::<FieldPrime, &[u8], &[u8], std::io::Error>(
-        &mut code.as_bytes(), None, None).unwrap()
+    compile::<FieldPrime, &[u8], &[u8], std::io::Error>(&mut code.as_bytes(), None, None).unwrap()
 }
 
 /// Generate a constraint system.
@@ -42,7 +40,11 @@ pub fn make_witness(code: &str, x: u32, y: u32) -> JsValue /* Instance */ {
 
     let verifier_msg = get_verifier_msg(&prover_msg).unwrap();
 
-    JsValue::from_serde(&Instance { prover_msg, verifier_msg }).unwrap()
+    JsValue::from_serde(&Instance {
+        prover_msg,
+        verifier_msg,
+    })
+    .unwrap()
 }
 
 #[derive(Serialize)]
