@@ -4,7 +4,7 @@ set +x
 
 echo executing cargo_check.sh
 
-cd ../zkif-wasm-bundles/zkif-wasm-bulletproofs/
+cd ./zkif-wasm-bundles/zkif-wasm-bulletproofs/
 cargo fmt -- --check
 cargo clippy -- -D warnings
 cargo test
