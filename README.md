@@ -6,3 +6,14 @@ A zkInterface in WebAssembly
 live demo: https://qed-it.github.io/zkinterface-wasm-demo (hosted @ https://github.com/QED-it/zkinterface-wasm-demo)
 
 the code for the demo can be found at [/demo](https://github.com/QED-it/zkinterface-wasm/tree/master/demo)
+
+## Progress Tracker:
+| System             | ZK-Interface  support | wasm supports      |  Demo integration  |
+|--------------------|-----------------------|--------------------|--------------------|
+| :heavy_check_mark: | :heavy_check_mark:    | :heavy_check_mark: | :heavy_check_mark: |
+| Bulletproof        | :heavy_check_mark:    | :heavy_check_mark: | :heavy_check_mark: |
+| Zokrates           | :heavy_check_mark:    | :heavy_check_mark: | :heavy_check_mark: |
+|                    |                       |                    |                    |
+
+## How to contribue:
+
