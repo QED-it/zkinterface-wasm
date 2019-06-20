@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/QED-it/zkinterface-wasm.svg?branch=master)](https://travis-ci.org/QED-it/zkinterface-wasm)
+
 # zkinterface-wasm
 A zkInterface in WebAssembly
 
