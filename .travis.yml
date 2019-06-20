@@ -2,7 +2,8 @@ language: rust
 cache: cargo
 
 rust:
-- stable
+# - stable
+  - nightly
 
 install:
 - rustup component add rustfmt --toolchain stable
