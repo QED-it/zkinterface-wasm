@@ -7,9 +7,8 @@ rust:
 install:
 - rustup component add rustfmt --toolchain stable
 - rustup component add clippy --toolchain stable
+- curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh 
 
 script:
- - cargo fmt -- --check
- - cargo clippy -- -D warnings
- - cargo test
+ - ./ci/cargo_check.sh 
  - make
