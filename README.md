@@ -10,7 +10,7 @@ the code for the demo can be found at [/demo](https://github.com/QED-it/zkinterf
 ## Progress Tracker:
 |       System       | ZK-Interface  support | WebAssembly support |   Demo integration |
 |:------------------:|:---------------------:|:-------------------:|:------------------:|
-| :heavy_check_mark: |   :heavy_check_mark:  |  :heavy_check_mark: | :heavy_check_mark: |
+|     Bellman        |   :heavy_check_mark:  |  :heavy_check_mark: | :heavy_check_mark: |
 |     Bulletproof    |   :heavy_check_mark:  |  :heavy_check_mark: | :heavy_check_mark: |
 |      Zokrates      |   :heavy_check_mark:  |  :heavy_check_mark: | :heavy_check_mark: |
 |                    |                       |                     |                    |
