@@ -17,7 +17,7 @@ the code for the demo can be found at [/demo](https://github.com/QED-it/zkinterf
 
 ## How to contribue:
 
-Every system (frontend/backend) that supports Zk-Interface have 2 main stages and an optional final stage.
+Every system (frontend/backend) that supports Zk-Interface have 2 main stages and another optional final stage.
 
 ### Stage 1:
 Implememnt Zk-Interface support inside the system. 
