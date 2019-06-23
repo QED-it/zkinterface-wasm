@@ -5,10 +5,10 @@ build-wasm:
 	wasm-pack build --out-dir ../../demo/pkg/zkif-wasm-bulletproofs/ ../zkif-wasm-bundles/zkif-wasm-bulletproofs
 
 build-web:
-	cd demo && npm run build
+	cd ../demo && npm run build
 
 install:
-	cd demo && npm install
+	cd ../demo && npm install
 
 web-dev:
-	cd demo && npm run start
+	cd ../demo && npm run start

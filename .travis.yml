@@ -5,13 +5,17 @@ rust:
 # - stable
   - nightly
 
+before_install:
+- set -e
+- rustup self update
+
 install:
-- rustup component add rustfmt #--toolchain stable
-- rustup component add clippy #--toolchain stable
+- rustup component add rustfmt
+- rustup component add clippy
 - cargo install -f wasm-pack  
 
 before_script:
    - chmod +x ./ci/cargo_check.sh
 script:
- - ./ci/cargo_check.sh 
- - make
+ - ./ci/script.sh 
+ - make -C ci 
