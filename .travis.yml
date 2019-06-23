@@ -2,8 +2,8 @@ language: rust
 cache: cargo
 
 rust:
-# - stable
-  - nightly
+ - stable
+ - nightly
 
 before_install:
 - set -e
