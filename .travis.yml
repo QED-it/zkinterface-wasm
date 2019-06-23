@@ -7,7 +7,7 @@ rust:
 
 before_install:
 - set -e
-- rustup self update
+# - rustup self update
 
 install:
 - rustup component add rustfmt
