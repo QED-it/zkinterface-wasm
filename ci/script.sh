@@ -2,21 +2,21 @@
 
 set +x
 
-echo executing cargo_check.sh
+echo executing scripit.sh
 
 cd ./zkif-wasm-bundles/zkif-wasm-bulletproofs/
-cargo fmt -- --check
-cargo clippy -- -D warnings
-cargo test
+cargo +nightly-2019-06-22 fmt -- --check
+cargo +nightly-2019-06-22 clippy -- -D warnings
+cargo +nightly-2019-06-22 test
 
 cd ../zkif-wasm-example
-cargo fmt -- --check
-cargo clippy -- -D warnings
-cargo test
+cargo +nightly-2019-06-22 fmt -- --check
+cargo +nightly-2019-06-22 clippy -- -D warnings
+cargo +nightly-2019-06-22 test
 
 cd ../zkif-wasm-zokrates
-cargo fmt -- --check
-cargo clippy -- -D warnings
-cargo test
+cargo +nightly-2019-06-22 fmt -- --check
+cargo +nightly-2019-06-22 clippy -- -D warnings
+cargo +nightly-2019-06-22 test
 
 
