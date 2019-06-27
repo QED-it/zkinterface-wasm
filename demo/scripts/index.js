@@ -1,16 +1,26 @@
 import * as zkif_zokrates from "../pkg/zkif-wasm-zokrates";
 import * as zkif_bulletproofs from "../pkg/zkif-wasm-bulletproofs";
+import CodeMirror from 'codemirror';
 
 // Common program.
 let code = `
-
 def main(field x, private field y) -> (field):
     field xx = x * x
     field yy = y * y
     return xx + yy - 1
-
 `;
-document.getElementById("program").innerText = code.trim();
+
+var editor = CodeMirror.fromTextArea(document.getElementById("program"), {
+    lineNumbers: true,
+    mode: "javascript"
+});
+editor.setValue(code);
+
+editor.on('change', function () {
+    var code = editor.getValue()
+
+});
+
 
 // Compile the code to ZkInterface constraints with the ZoKrates module.
 let constraints = zkif_zokrates.make_constraint_system(code);
