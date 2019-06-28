@@ -28,7 +28,8 @@ deploy:
   local-dir: target
   github_token: $GITHUB_TOKEN
   keep-history: true
-  repo: github.com/QED-it/zkinterface-wasm-demo # gh-username/gh-username.github.io
+  repo: github.com/QED-it/zkinterface-wasm-demo   # gh-username/gh-username.github.io
   target-branch: master
   on:
     branch: master
+    
