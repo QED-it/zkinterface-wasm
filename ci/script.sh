@@ -19,4 +19,8 @@ cargo +nightly-2019-06-22 fmt -- --check
 cargo +nightly-2019-06-22 clippy -- -D warnings
 cargo +nightly-2019-06-22 test
 
-
+cd ..
+make
+cd ../demo
+npm install
+npm run build
