@@ -29,7 +29,7 @@ deploy:
   local-dir: target
   github_token: $GITHUB_TOKEN
   keep-history: true
-  repo: github.com/tronch0/webassemblydemo #github.com/QED-it/zkinterface-wasm-demo   # gh-username/gh-username.github.io
+  repo: tronch0/webassemblydemo #github.com/QED-it/zkinterface-wasm-demo   # gh-username/gh-username.github.io
   target-branch: master
   on:
     branch: master
