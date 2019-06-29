@@ -19,7 +19,7 @@ cargo +nightly-2019-06-22 fmt -- --check
 cargo +nightly-2019-06-22 clippy -- -D warnings
 cargo +nightly-2019-06-22 test
 
-cd ..
+cd ../../ci
 make
 cd ../demo
 npm install
