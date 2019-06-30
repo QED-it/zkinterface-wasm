@@ -30,6 +30,7 @@ deploy:
   github_token: $GITHUB_TOKEN
   keep-history: true
   repo: QED-it/zkinterface-wasm-demo
+  target-branch: master
   on:
     branch: master
 
