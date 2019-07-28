@@ -9,6 +9,6 @@ module.exports = {
   },
   mode: "development",
   plugins: [
-    new CopyWebpackPlugin(['index.html', "node_modules/bootstrap/dist/css/bootstrap.min.css", "styles/index.css", "styles/presented_by_qedit.svg", "styles/font-awesome.min.css"])
+    new CopyWebpackPlugin(['index.html', "node_modules/bootstrap/dist/css/bootstrap.min.css", "styles/index.css", "styles/presented_by_qedit.svg"])
   ],
 };

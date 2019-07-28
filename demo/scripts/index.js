@@ -44,13 +44,10 @@ function computeWitness(){
     console.log("y: " + y);
 
     // Compute the ZkInterface witness with the ZoKrates module.
-    let {prover_msg_tmp, verifier_msg_tmp} = zkif_zokrates.make_witness(code, x, y);
+    prover_msg, verifier_msg = zkif_zokrates.make_witness(code, x, y);
 
-    console.log("output parameter, prover_msg_tmp: " + prover_msg_tmp);
-    console.log("output parameter, verifier_msg_tmp: " + verifier_msg_tmp);
-
-    prover_msg = prover_msg_tmp;
-    verifier_msg = verifier_msg_tmp;
+    console.log("output parameter, prover_msg: " + prover_msg);
+    console.log("output parameter, verifier_msg: " + verifier_msg);
 
     // Display.
     document.getElementById("prover").innerText = `
