@@ -30,7 +30,6 @@ function generateConstraints (){
     document.getElementById("cs").innerText = zkif_zokrates.pretty(constraints).trim();
 
     console.log("generateConstraints finished");
-
 }
 
 document.getElementById("computeWitnessBtn").addEventListener("click", computeWitness); 
@@ -44,7 +43,10 @@ function computeWitness(){
     console.log("y: " + y);
 
     // Compute the ZkInterface witness with the ZoKrates module.
-    prover_msg, verifier_msg = zkif_zokrates.make_witness(code, x, y);
+    let res  = zkif_zokrates.make_witness(code, x, y);
+    
+    prover_msg = res.prover_msg;
+    verifier_msg = res.verifier_msg;
 
     console.log("output parameter, prover_msg: " + prover_msg);
     console.log("output parameter, verifier_msg: " + verifier_msg);
@@ -82,7 +84,7 @@ function createProof(){
 
     document.getElementById("verifier").innerText = `
     Proof created. (${proof.length} bytes)
-    `
+    `;
 
     console.log("createProof finished");
 }
@@ -124,7 +126,7 @@ function verifyProof(){
         let public_inputs = zkif_zokrates.parse_verifier_msg(msg);
         let x = public_inputs[1][0];
         let zz = public_inputs[2][0];
-        return `${x}^2 + y^2 = ${zz}`
+        return `${x}^2 + y^2 = ${zz}`;
     }
 
     let status = `The statement is ${verif && "proven" || "NOT proven"}:  ${statement(verifier_msg)}`;
@@ -134,5 +136,4 @@ function verifyProof(){
     console.log("output parameter proof value: " + proof);
 
     console.log("verifyProof finished");
-
 }
