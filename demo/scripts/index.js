@@ -82,9 +82,12 @@ function createProof(){
     proof = zkif_bulletproofs.prove(constraints, prover_msg);
     console.log("output parameter proof value: " + proof);
 
-    document.getElementById("verifier").innerText = `
-    Proof created. (${proof.length} bytes)
-    `;
+    var proofHex =  toHexString(proof);
+    var proofHexSubset = proofHex.substring(0, 20);
+
+    var verifierEle = document.getElementById("verifier");
+    verifierEle.innerText = "Prover:\n";
+    verifierEle.insertAdjacentText("beforeend","Proof created, proof-content=" +  proofHexSubset +"... (" + proof.length + " bytes)\n");
 
     console.log("createProof finished");
 }
@@ -102,21 +105,20 @@ function verifyProof(){
         return;
     }
 
-    if (!proof) {
-        window.alert("proof is empty, please create proof first.");
-        return;
-    }
-
     if (!constraints) {
         window.alert("constraints are empty, please generate constraints first.");
         return;
     }
 
+    if (!proof) {
+        window.alert("proof is empty, please create proof first.");
+        return;
+    }
+
     // Prover sends verifier_msg and proof to the verifier.
-    document.getElementById("verifier").insertAdjacentText("beforeend",`
-    ${zkif_zokrates.pretty(verifier_msg)}
-    Verifying proof (${proof.length} bytes)
-    `.trim());
+    document.getElementById("verifier").insertAdjacentText("beforeend","\nVerify: \
+    " + zkif_zokrates.pretty(verifier_msg) + "\n\
+    Verifying proof (" +proof.length + " bytes)");
 
     // Verify the proof using the Bulletproofs module and the messages.
     let verif = zkif_bulletproofs.verify(constraints, verifier_msg, proof);
@@ -137,3 +139,9 @@ function verifyProof(){
 
     console.log("verifyProof finished");
 }
+
+function toHexString(byteArray) {
+    return Array.from(byteArray, function(byte) {
+      return ('0' + (byte & 0xFF).toString(16)).slice(-2);
+    }).join('')
+  }
