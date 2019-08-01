@@ -9,7 +9,14 @@
     <!-- Bootstrap core CSS -->
 <link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+<!-- <link href="font-awesome.min.css" rel="stylesheet" crossorigin="anonymous"> -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <style>
+
+      a:link {
+        color: #17a2b8;
+      }
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -67,6 +74,7 @@
 
   <!-- <div class="product-device shadow-sm d-none d-md-block"></div> -->
   <!--   <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div> -->
+
 </div>
 
 <div class="position-relative overflow-hidden px-3 px-lg-5 m-lg-3 bg-light">
@@ -147,19 +155,30 @@
       id="program">
       _
     </code></pre>
-  </div>
+
+    <div class="btn-group btn-block" role="group" aria-label="Basic example">
+        <button type="button" id="computeWitnessBtn" class="btn btn-info btn-lg">&nbsp; Compute Witness &nbsp;<i class="fa fa-chevron-down fa-fw" aria-hidden="true"></i>
+        </button>
+        <button type="button" id="generateConstraintsBtn" class="btn btn-info btn-lg">&nbsp; Generate constraints &nbsp;<i class="fa fa-chevron-right fa-fw" aria-hidden="true"></i>
+        </button>
+      </div>
+
+</div>
 
   <div class="border-dark-q arrow-right my-auto"></div>
 
   <div class="bg-light-q mr-md-3 p-3 p-md-5 overflow-hidden">
-    <div class="text-center mb-3 pb-3">
-      <h2 class="display-5">Prover's View</h2>
-      <p class="lead">A private witness is used to generate a proof.</p>
-    </div>
-    <pre class="code-block bg-dark-q text-white shadow-sm mx-auto"><code
-      id="prover">
-      _
-    </code></pre>
+
+      <div class="text-center mb-3 pb-3">
+          <h2 class="display-5">Constraint System</h2>
+          <p class="lead">
+            The program is compiled into a common R1CS form.
+          </p>
+        </div>
+        <pre class="code-block bg-dark-q text-white shadow-sm mx-auto"><code
+          id="cs">
+          _
+        </code></pre>
   </div>
 </div>
 
@@ -176,16 +195,17 @@
 <div class="d-md-flex flex-md-equal w-100 mb-md-3 pl-md-3">
 
   <div class="bg-light-q p-3 p-md-5 overflow-hidden">
-    <div class="text-center mb-3 pb-3">
-      <h2 class="display-5">Constraint System</h2>
-      <p class="lead">
-        The program is compiled into a common R1CS form.
-      </p>
-    </div>
-    <pre class="code-block bg-dark-q text-white shadow-sm mx-auto"><code
-      id="cs">
-      _
-    </code></pre>
+        
+      <div class="text-center mb-3 pb-3">
+          <h2 class="display-5">Prover's View</h2>
+          <p class="lead">A private witness is used to generate a proof.</p>
+        </div>
+        <pre class="code-block bg-dark-q text-white shadow-sm mx-auto"><code
+          id="prover">
+          _
+        </code></pre>
+        <button type="button" id="createProofBtn" class="btn btn-info btn-lg btn-block">Generate proof</button>
+
   </div>
 
   <div class="border-dark-q arrow-right my-auto"></div>
@@ -201,13 +221,14 @@
       </code>
 
 <span id="status"></span></pre>
+<button type="button" id="verifyProofBtn" class="btn btn-info btn-lg btn-block">Verify proof</button>
   </div>
+
 </div>
+
 
 <!-- Separator -->
 <div class="position-relative m-5 p-5"></div>
 
-<!-- <script src="node_modules/jquery/dist/jquery.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script> -->
-
 </body></html>
+
