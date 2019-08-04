@@ -16,6 +16,7 @@ install:
  - cargo install wasm-pack || echo "wasm-pack already installed"
 
 before_script:
+- echo "rust version $TRAVIS_RUST_VERSION"
 - chmod +x ./ci/script.sh
 
 script:
