@@ -128,7 +128,7 @@ function verifyProof(){
         let public_inputs = zkif_zokrates.parse_verifier_msg(msg);
         let x = public_inputs[1][0];
         let zz = public_inputs[2][0];
-        return `${x}^2 + y^2 = ${zz}`;
+        return `${x}^2 + y^2 - 1 = ${zz}`;
     }
 
     let status = `The statement is ${verif && "proven" || "NOT proven"}:  ${statement(verifier_msg)}`;
