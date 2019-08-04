@@ -6,17 +6,12 @@ cache: cargo
 rust:
  - nightly-2019-06-22
 
-# before_install:
-# - rustup self update
-
 install:
-# - rustup update nightly-2019-06-22
  - rustup component add --toolchain nightly-2019-06-22 rustfmt
  - rustup component add --toolchain nightly-2019-06-22 clippy
  - cargo install wasm-pack || echo "wasm-pack already installed"
 
 before_script:
-- echo "rust version $TRAVIS_RUST_VERSION"
 - chmod +x ./ci/script.sh
 
 script:
