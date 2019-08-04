@@ -159,5 +159,6 @@ function toHexString(byteArray) {
 
   function disableBtn(clickEvent) {
     var ele = clickEvent.target || clickEvent.srcElement;
+    ele.setAttribute("disabled", "disabled");
     ele.classList.add("disabled");
 }
