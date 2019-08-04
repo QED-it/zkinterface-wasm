@@ -18,8 +18,12 @@ document.getElementById("program").innerText = code.trim();
 
 document.getElementById("generateConstraintsBtn").addEventListener("click", generateConstraints); 
 
-function generateConstraints (){
+
+
+function generateConstraints (e){
     console.log("generateConstraints invoked");
+
+    disableBtn(e)
 
     var programCode = document.getElementById("program").innerText;
     console.log("programCode, programCode: " + programCode);
@@ -34,9 +38,11 @@ function generateConstraints (){
 
 document.getElementById("computeWitnessBtn").addEventListener("click", computeWitness); 
 
-function computeWitness(){
+function computeWitness(e){
     console.log("computeWitness invoked");
     // Prover's View.
+
+    disableBtn(e)
 
     console.log("input parameter, code: " + code);
     console.log("x: " + x);
@@ -62,8 +68,10 @@ function computeWitness(){
 
 document.getElementById("createProofBtn").addEventListener("click", createProof); 
 
-function createProof(){
+function createProof(e){
     console.log("createProof invoked");
+
+    disableBtn(e)
 
     console.log("input parameter constraints value: " + constraints);
     console.log("input parameter prover_msg value: " + prover_msg);
@@ -94,8 +102,11 @@ function createProof(){
 
 document.getElementById("verifyProofBtn").addEventListener("click", verifyProof); 
 
-function verifyProof(){
+function verifyProof(e){
     console.log("computeWitness invoked");
+
+    disableBtn(e)
+
     console.log("input parameter, verifier_msg: " + verifier_msg);
     console.log("input parameter, proof: " + proof);
     console.log("input parameter, constraints: " + constraints);
@@ -145,3 +156,8 @@ function toHexString(byteArray) {
       return ('0' + (byte & 0xFF).toString(16)).slice(-2);
     }).join('')
   }
+
+  function disableBtn(clickEvent) {
+    var ele = clickEvent.target || clickEvent.srcElement;
+    ele.classList.add("disabled");
+}
