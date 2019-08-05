@@ -15,15 +15,12 @@ let code = `
     `;
     
 document.getElementById("program").innerText = code.trim();
-
 document.getElementById("generateConstraintsBtn").addEventListener("click", generateConstraints); 
-
-
 
 function generateConstraints (e){
     console.log("generateConstraints invoked");
 
-    disableBtn(e)
+    disableBtn(e);
 
     var programCode = document.getElementById("program").innerText;
     console.log("programCode, programCode: " + programCode);
@@ -42,7 +39,7 @@ function computeWitness(e){
     console.log("computeWitness invoked");
     // Prover's View.
 
-    disableBtn(e)
+    disableBtn(e);
 
     console.log("input parameter, code: " + code);
     console.log("x: " + x);
@@ -70,9 +67,6 @@ document.getElementById("createProofBtn").addEventListener("click", createProof)
 
 function createProof(e){
     console.log("createProof invoked");
-
-    disableBtn(e)
-
     console.log("input parameter constraints value: " + constraints);
     console.log("input parameter prover_msg value: " + prover_msg);
 
@@ -85,6 +79,8 @@ function createProof(e){
         window.alert("witness is empty, please compute witness first.");
         return;
     }
+
+    disableBtn(e);
 
     // Generate a proof with the Bulletproofs module.
     proof = zkif_bulletproofs.prove(constraints, prover_msg);
@@ -104,9 +100,6 @@ document.getElementById("verifyProofBtn").addEventListener("click", verifyProof)
 
 function verifyProof(e){
     console.log("computeWitness invoked");
-
-    disableBtn(e)
-
     console.log("input parameter, verifier_msg: " + verifier_msg);
     console.log("input parameter, proof: " + proof);
     console.log("input parameter, constraints: " + constraints);
@@ -125,6 +118,8 @@ function verifyProof(e){
         window.alert("proof is empty, please create proof first.");
         return;
     }
+
+    disableBtn(e);
 
     // Prover sends verifier_msg and proof to the verifier.
     document.getElementById("verifier").insertAdjacentText("beforeend","\nVerify: \
